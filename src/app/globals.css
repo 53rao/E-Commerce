@@ -1,0 +1,52 @@
+/* globals.css */
+
+/* REQUIRED: Import Big Shoulders (the variable font with opsz) directly via URL */
+/* Recheck of import URL: This URL loads the base "Big Shoulders" variable font (not "Display") */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&display=swap');
+
+
+/* Tailwind CSS v4 is imported directly */
+@import "tailwindcss";
+@plugin "tailwindcss-motion";
+/*
+   Tailwind CSS v4: Use @theme for all configuration, including fonts, colors, breakpoints.
+   These variables will generate utility classes.
+*/
+@theme {
+  /* Colors for your default theme */
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Define your primary font utility using --font-Primary */
+  --font-Primary: 'Big Shoulders', sans-serif; /* Explicitly use the font name "Big Shoulders" */
+
+  /* Your custom breakpoints */
+  --breakpoint-xs: 600px;
+  --breakpoint-xxs: 500px;
+  --breakpoint-xl1: 1800px;
+  --breakpoint-tl: 2100px;
+  --breakpoint-jl: 1055px;
+
+  /* Your custom colors */
+  --color-cgreen-500: #15AB4E;
+  --color-corange-400: #FFA500;
+}
+
+/* Dark mode configuration for Tailwind v4 */
+
+
+/*
+   Apply basic styles to the body. The font-family will be set by the
+   `font-Primary` class applied to the wrapping div in RootLayout.tsx.
+*/
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* This line is now redundant if you apply `font-Primary` class to the
+     outermost element wrapping `children` in RootLayout.tsx.
+     It's left here for clarity of intent or as a deep fallback. */
+  font-family: var(--font-Primary);
+}
