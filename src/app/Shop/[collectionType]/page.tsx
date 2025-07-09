@@ -22,7 +22,7 @@ export default function Collection({params}:{
   }
   return (
     <>
-      <div className="Main flex-row justify-center mx-auto font-Primary bg-indigo-800 
+      <div className="Main flex-row justify-center mx-auto font-Primary bg-gray-800 
 	">
         <Navbar/>
         <div className="section bg-transparent py-10 px-4">
@@ -34,6 +34,7 @@ export default function Collection({params}:{
             ))}
           </div>
         </div>
+        
 
         
 

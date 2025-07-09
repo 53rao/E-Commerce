@@ -65,20 +65,29 @@ function Home() {
 
         <div className="adholder  bg-white sm:py-2">
           <div className="ad h- w-full sm:px-2 justify-center items-center  mx-auto flex flex-wrap ">
+            
+
             <div className="imageholder w-full  h-80 sm:h-100 sm:w-1/2 sm:pr-2 ">
+              <Link href="/Shop/New">
               <img
                 src="Hero/9.png"
                 alt=""
                 className="object-cover w-full h-full "
               />
+              </Link>
             </div>
+            
+            
             <div className="imageholder w-full h-80 sm:h-100  sm:w-1/2 ">
+              <Link href="/Shop/Vintage">
               <img
                 src="Hero/10.png"
                 alt=""
                 className="object-cover w-full h-full "
               />
+              </Link>
             </div>
+            
           </div>
         </div>
         <div className="content text-center flex items-center justify-center py-10 px-4 bg-black  text-white font-Primary">

@@ -3,6 +3,7 @@ import Combined from "@/Data/Combined";
 import { use } from 'react';
 import CardDetails from "@/Components/CardDetails";
 
+
 import { notFound } from 'next/navigation';
 
 export default function Collection({params}:{

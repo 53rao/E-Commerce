@@ -15,7 +15,7 @@ function Navbar() {
       <div className={` bg-transparent py-3 px-3  xs:py-2  h-auto w-screen flex flex-wrap font-Primary font-bold text-2xl items-center xs:px-5 place-content-between`}>
         <div className="brand flex items-center">
           <div className="logo h-10 w-10 rounded-full">
-            <img src="Vectors/Logo.png" alt="" />
+            <img src="/Vectors/Logo.png" alt="" />
           </div>
           <div className="name text-3xl xs:text-3xl text-white">ShoeMe</div>
         </div>
@@ -25,7 +25,7 @@ function Navbar() {
         <div className="logo w-auto  xs:hidden  flex flex-col  h-full">
           {!isOpen ? ( 
             <div className="comp h-8 w-8">
-              <img src="Vectors/Comp1.png " alt="" onClick={navtoggle} />
+              <img src="/Vectors/Comp1.png " alt="" onClick={navtoggle} />
               
             </div>
           ) : (<a onClick={navtoggle} className="text-white  text-4xl cursor-pointer">&times;	</a>)}
@@ -66,6 +66,7 @@ function Menu2(){
         <li className='shadow-md py-3'><Link href="/Shop" className='shadow-md' >Shop</Link></li>
         <li className='shadow-md py-3' ><Link href="/Contact" className='shadow-md'>Contact Us</Link></li>
         <li className='shadow-md py-3'><Link href="/About" >About Us</Link></li>
+        <li className='shadow-md py-3'><Link href="/Cart" >Cart</Link></li>
         </ol>
   );
 }

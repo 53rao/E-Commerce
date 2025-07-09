@@ -6,7 +6,7 @@ function Footer() {
 
         
         <div className="flex-row justify-center text-center my-2">
-          <div className="w-full flex justify-center"><img src="Vectors/Logo.png" className="h-20 justify-center" alt="" /></div>
+          <div className="w-full flex justify-center"><img src="/Vectors/Logo.png" className="h-20 justify-center" alt="" /></div>
           <h2 className="text-2xl font-bold mb-4">ShoeMe</h2>
           <p className="text-gray-400 text-sm">
             Define Style

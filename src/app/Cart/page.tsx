@@ -1,44 +1,85 @@
 'use client';
+import combined from "@/Data/Combined";
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
-function Cart() {
+import VCard from "@/Components/VCard";
+import { useState,useEffect } from "react";
+
+
+
+
+
+export default function Cart() {
+  const [cartIds, setCartIds] = useState<number[]>(()=>{
+      if(typeof window!=="undefined" ){
+          const stored = localStorage.getItem("PIDS");
+          return stored?JSON.parse(stored):[];
+      }return [];
+    }); 
+
+
+  // const [cartIds, setCartIds] = useState<number[]>([]); // always start empty (matches server render)
+
+  // // Then load from localStorage on client
+  // useEffect(() => {
+  //   const stored = localStorage.getItem("PIDS");
+  //   if (stored) {
+  //     setCartIds(JSON.parse(stored));
+  //   }
+  // }, []);
   
+    
+
+    useEffect(() => {
+      localStorage.setItem("PIDS", JSON.stringify(cartIds));
+    }, [cartIds]);
+  
+  const removeFromCart = (idToRemove: number) => {
+    let removed = false;
+    setCartIds(prev =>
+      prev.filter(id => {
+        if (!removed && id === idToRemove) {
+          removed = true;
+          return false; 
+        }
+        return true; 
+      })
+    );
+    window.location.reload();
+  };
+  const filtered = combined.filter(product => cartIds.includes(product.id));
+
+
+
+  const total = filtered.reduce((sum, item) => sum + item.price, 0);
+
   return (
-    <>
-      <div className="main bg-red-500">
-        <Navbar  />
-        <div className="min-h-screen flex flex-col justify-center items-center bg-gray-950 text-white font-Primary px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-orange-400">
-            🛒 Your Cart is Empty
-          </h1>
+    <div className="min-h-screen bg-gray-950 text-white font-Primary">
+      <Navbar />
 
-          <p className="text-lg md:text-2xl text-gray-300 mb-6">
-            But baby, just like your ex, we’re coming back stronger.
-            <br />
-            <span className="text-orange-500 font-bold">
-              Grand Launch on June 27th, 12 PM.
-            </span>
-            <br />
-            Oil up those soles. It’s time to flex.
-          </p>
-
-          <div className="text-sm md:text-lg italic text-gray-400 space-y-2 max-w-xl">
-            <p>“Is your cart empty, or are you just waiting for June 27th?”</p>
-            <p>“You must be the drop, 'cause my wallet's ready to fall.”</p>
-            <p>
-              “They said true love doesn’t exist, then we launched on June
-              27th.”
-            </p>
-            <p>
-              “You looking like the reason my card's about to get declined.”
-            </p>
-            <p>“Oil up, lace tight. This launch ain’t for the faint.”</p>
-          </div>
-          <p className="mt-10 text-sm text-gray-500 italic">—P. Diddy</p>
+      <div className="flex flex-col lg:flex-row px-6 py-8 gap-6 min-h-[59vh]">
+        
+        <div className="w-full lg:w-2/3 space-y-4">
+          
+          {filtered.map((shoe) => (
+            <VCard key={shoe.id} shoe={shoe} props={{
+            onClick: () => removeFromCart(shoe.id),
+            }} />
+          ))}
         </div>
-        <Footer />
+
+        {/* Order Summary */}
+        <div className="w-full lg:w-1/3 bg-white text-gray-900 rounded-xl shadow-lg p-6 h-fit">
+          <h3 className="text-2xl font-bold mb-4">Order Summary</h3>
+          <p className="text-lg font-medium">Items: {filtered.length}</p>
+          <p className="text-lg font-medium">Total: ₹{total}</p>
+          <button className="mt-6 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition">
+            Proceed to Checkout
+          </button>
+        </div>
       </div>
-    </>
+
+      <Footer />
+    </div>
   );
 }
-export default Cart;
