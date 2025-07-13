@@ -45,7 +45,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
           {submitted && (
             <p className="text-green-600 mb-4 text-center">
-              ✅ Message sent successfully! We'll get back to you soon.
+              ✅ Message sent successfully! We&apos;ll get back to you soon.
             </p>
           )}
 
@@ -102,7 +102,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
               Talk to a member of our Support team
             </h2>
             <p className="text-gray-700 mb-6">
-              Haven't recieved your shoes yet? We’ll help you get them delivered
+              Haven&apos;t recieved your shoes yet? We’ll help you get them delivered
               to your location instantly.
             </p>
             <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full transition">
@@ -118,7 +118,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
             </h2>
             <p className="text-gray-700 mb-6">
               Our help center is fresh and always open for queries. If you
-              haven't recieved the right product, and wish to return or replace
+              haven&apos;t recieved the right product, and wish to return or replace
               it, you can do so easily.
             </p>
             <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-full transition">

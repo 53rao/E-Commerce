@@ -10,6 +10,7 @@ import { useState,useEffect } from "react";
 
 
 export default function Cart() {
+  // Lazy Initlization
   const [cartIds, setCartIds] = useState<number[]>(()=>{
       if(typeof window!=="undefined" ){
           const stored = localStorage.getItem("PIDS");

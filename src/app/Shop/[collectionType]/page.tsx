@@ -1,16 +1,16 @@
 'use client';
 import Combined from "@/Data/Combined";
 import { use } from 'react';
-import CollectionNotFound from "./not-found";
 import { notFound } from 'next/navigation';
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 
 import Card from "@/Components/Card";
-import combined from "@/Data/Combined";
 
 export default function Collection({params}:{
     params:Promise<{ collectionType: string }>;
+ //A param property was accessed directly with params.collectionType. params is now a Promise and should be unwrapped with React.use() before accessing properties of the underlying params object. In this version of Next.js direct access to param properties is still supported to facilitate migration but in a future version you will be required to unwrap params with React.use().
+
 }) {
     const {collectionType}=use(params);
     const results = Combined.filter((shoe) => shoe.collectionType === collectionType );

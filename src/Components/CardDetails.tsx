@@ -96,18 +96,7 @@ function CardDetails({ shoe }: {shoe:Shoe}) {
      
       
     
-    const removeFromCart = (idToRemove: number) => {
-      let removed = false;
-      setCartIds(prev =>
-        prev.filter(id => {
-          if (!removed && id === idToRemove) {
-            removed = true;
-            return false; 
-          }
-          return true; 
-        })
-      );
-    };
+ 
 
 
   

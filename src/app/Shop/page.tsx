@@ -7,20 +7,7 @@ import newshoeData from "@/Data/New";
 import vintageshoes from "@/Data/Vintage";
 import Link from "next/link";
 
-type Shoe = {
-  id: number;
-  name: string;
-  title: string;
-  desc: string;
-  price: number;
-  mrp: number;
-  discount: number;
-  deal: string;
-  sizes: number[];
-  image: string;
-  buttonColor: string;
-  collectionType: string;
-};
+
 function Shop() {
  
   return (

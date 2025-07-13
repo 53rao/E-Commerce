@@ -59,7 +59,7 @@ function Home() {
                 SHOP NOW
               </button>
             </Link>
-            <p className="text-xs mt-1 text-gray-200">*T&C's Apply.</p>
+            <p className="text-xs mt-1 text-gray-200">*T&C&apos;s Apply.</p>
           </div>
         </div>
 
@@ -149,7 +149,7 @@ function Home() {
         SHOP NOW
       </button>
     </Link>
-    <p className="text-xs mt-1 text-gray-200">*T&C's Apply.</p>
+    <p className="text-xs mt-1 text-gray-200">*T&C&apos;s Apply.</p>
   </div>
 </div>
 

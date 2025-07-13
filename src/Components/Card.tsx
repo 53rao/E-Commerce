@@ -1,8 +1,6 @@
 "use-client"
 import Link from "next/link";
 import Button from "./Button";
-// import { FaHeart, FaRegHeart } from 'react-icons/fa';
-// import { useState } from "react";
 
 type Shoe = {
   id: number;
@@ -24,12 +22,6 @@ function Card({ shoe }: {shoe:Shoe}) {
   
 
 
-  // const [liked, setLiked] = useState(false);
-  // const toggleLike = (index) => {
-  //   const updated = [...liked];
-  //   updated[index] = !updated[index];
-  //   setLiked(updated);
-  // };
   return (
    <>
    
@@ -44,16 +36,7 @@ function Card({ shoe }: {shoe:Shoe}) {
       className="w-full h-full object-cover rounded-t-xl " 
 
     />
-    {/* <button
-            onClick={() => toggleLike(shoe.id)}
-            className="absolute top-2 right-2 p-2 bg-white rounded-full shadow hover:scale-110 transition"
-          >
-            {liked[shoe.id] ? (
-              <FaHeart className="text-red-500" />
-            ) : (
-              <FaRegHeart className="text-gray-500" />
-            )}
-    </button> */}
+   
   </div>
    <div className="textholder h-full   flex-row items-center pt-3">
       <span className={`${shoe.buttonColor} text-2xl p-1 text-white text-center mr-1`}>{shoe.collectionType}</span><span className={`${shoe.buttonColor} text-2xl p-1 text-white text-center`}>{shoe.deal}</span>

@@ -12,6 +12,7 @@
    Tailwind CSS v4: Use @theme for all configuration, including fonts, colors, breakpoints.
    These variables will generate utility classes.
 */
+
 @theme {
   /* Colors for your default theme */
   --background: #ffffff;
